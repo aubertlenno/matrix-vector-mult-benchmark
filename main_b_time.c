@@ -28,7 +28,7 @@ void initVec(int* v, int N){
 int main(void) {
     srand(time(0));
 
-    int N = 1000;
+    int N = 2000;
 
     int* M = (int *) malloc(N*N*sizeof(int));
     int* v = (int *) malloc(N*sizeof(int));
@@ -43,7 +43,7 @@ int main(void) {
 
     double timeTaken = endTime - startTime;
 
-    printf("Time elapsed with N = %d : %f s\n", N, timeTaken);
+    printf("Time elapsed with N = %d is %f s\n", N, timeTaken);
 
     return 0;
 }

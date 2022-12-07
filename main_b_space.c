@@ -4,21 +4,41 @@
 
 #include "mylib/mylib.h"
 
+#define LOWER 1
+#define UPPER 9
+
+int generateRandomInt(int lower, int upper){
+    return (rand() % (upper-lower+1)) + lower;
+}
+
+void initMat(int* M, int N){
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            M[N*i+j] = generateRandomInt(LOWER,UPPER);
+        }
+    }
+}
+
+void initVec(int* v, int N){
+    for(int i=0; i<N; i++){
+        v[i] = generateRandomInt(LOWER,UPPER);
+    }
+}
+
 int main(void) {
 
-    int N = 2000;
-    int* Matrix = (int *) malloc(N*N*sizeof(int));
-    int* Vector = (int *) malloc(N*sizeof(int));
-    int* Result = (int *) malloc(N*sizeof(int));
+    int N = 500;
+    
+    int* M = (int *) malloc(N*N*sizeof(int));
+    int* v = (int *) malloc(N*sizeof(int));
+    int* Mv = (int *) malloc(N*sizeof(int));
 
-    initMat(Matrix, N);
-    printf("Matrix = ");
-    initVec(Vector, N);
-    printf("Vector = ");
+    initMat(M, N);
+    initVec(v, N);
 
     while (1) {
-        matVecMult(Matrix,Vector,Result,N);
-        }
+        matVecMult(M, v, Mv, N);
+    }
 
     return 0;
 

@@ -10,8 +10,9 @@ time:
 
 space:
 	gcc -o mylib.o -c mylib/mylib.c   
-	gcc -o main_b_space.out main_b_space.c mylib.o
+	gcc -o main_b_space.exe main_b_space.c mylib.o
 	
 clear: 
 	rm -rf *.out
 	rm -rf *.o
+	rm -rf *.exe
